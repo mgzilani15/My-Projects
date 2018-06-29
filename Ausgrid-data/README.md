@@ -1,15 +1,16 @@
 # Ausgrid-data
 A complete machine learning project Finding some facts like the hypothesis testing and build and implement the machine learning model from solar electricity data of Ausgrid Company .
 
-# Problem
+### Problem
 Depending on the usages of the electricity amount, it is possible to give the right answer to the people, what sized panel they can use or buy. Since when the solar panel came to the market, the debate is going on whether should we use the solar panel or not? In a certain period of time the installation cost will be overcome by the billing amount or not?
 
 Some people also argue that how many years it is possible to use the solar panel after the installation of the panel first time in the house. Some people also want to see the installation cost according to the size of the panel and some want to see the curve of solar and non solar billing situation.
 
 In this process our findings is to analysis the data got from the Ausgrid company and try to find out the proper answer of the above questions raised.
 
-# Files
+### Files
 In this project, A machine learning model been developed using the logistic regression. The data been taken from the company (Ausgrid energy) website, which is: http://www.ausgrid.com.au/Common/About-us/Corporate-information/Data-to-share/Solar-home-electricity-data.aspx#.Wa35zLIjHIV. The data is mainly the billing information of their customer who been using the solar panel or not, however the data was free to use for any research purposes. We been using Three tables given bellow:
+
         •	Solar customer information
         •	Non solar customer information 
         •	Customer location
