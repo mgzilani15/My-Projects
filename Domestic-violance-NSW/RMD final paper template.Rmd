@@ -1,0 +1,179 @@
+---
+title: "Research project (Domestic Violence in NSW)"
+author: '470535297'
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<style>
+body {
+text-align: justify}
+</style>
+
+
+
+# Introduction 
+
+When some one very close to another person been abused physically, mentally or sexually can be termed as a domestic violence. It can be happened various format and various stage, like partner, career or within the family member etc. it can be effect anybody in the community like disable, any gender or in any age.  However this is a social problem not only in Australia but also worldwide, and sociologist and researcher are continuously working on to see the exact reasoning behind the domestic violence. 
+
+
+\vspace{3mm}
+
+In Australia, specially in NSW the domestic violence is increasing alertly since from 1999.  In NSW regional area is in high risk of domestic violence, however there is positive relationship between the domestic violence in NSW and its reporting. It is also very alarming that the data and statistics shows that the increasing number of domestic violence in NSW, just not because of the increasing number of population. In this paper it has been aiming to find out whether the reason is just because of the economical reason or the education or demographical location. 
+
+
+\vspace{3mm}
+
+To find out the answer of these question, the domestic violence data been used from the census NSW.  It has been observed and analyzed the data which has been given reported domestic violence in various LGO of NSW.  Using the R mark down it was observed the trend and the relationship in various factors of domestic violence. 
+
+
+\vspace{6mm}
+
+
+# Literature and theory
+
+Before we work on the data which has given, bellow is some of the facts been found in this field which been done by the researchers, and also continuously working on this topic. However there are significant reason, figure and facts been found. 
+
+\vspace{3mm}
+
+One of the main reason of domestic violence in Australia is describe as the poverty. The poverty rate in Australia is increasing day by day, this is happening because the low amount of payment from the employee, which is denoted one of the reason for increasing domestic violence in Australia, since it has seen that number of domestic violence in poor area is much higher than the rate in high income or the reach area (Eardley, 1998) . 
+
+\vspace{3mm}
+
+Domestic violence in NSW is not happening in same rate in everywhere. Family and women living in rural area is in higher risk of domestic violence than the people living in the city area. According to the study done by NSW crime statistics and researcher, women living in low status area is 7 time higher in risk of domestic violence, than the women in high status areas (Devery, 1992) Which mean the Woman living in poor or low income LGO in NSW facing more domestic violence, rather than the area of rich living people. Young female and non white female are also in the risk of domestic violence comparing to the white young women. 
+
+\vspace{3mm}
+
+This is very much alarming that people who have gone through the cause of domestic violence have more risk of serious health issue, specially within the women.  Study shows that women and children most of the time gone through mental illness and depression due to the domestic violence (Bates, 1995).  Children and the young people who face the experience of domestic violence directly or indirectly have perform less in the society. They have a great chance to be spoiled and commit the crime in future of their life. The young women can't be socialized or become a part of the family if they have any sort of direct or indirect experience of domestic violence in their lifetime. 
+
+\vspace{3mm}
+
+Young women are more likely to be in the spectrum of the domestic violence. Study shows that, while the young women shout for the legal help from the police is having more and more incident of the domestic violence in the society. However, while the researcher are worried about the cause of domestic violence in the young people, the result is came as the drug use, unemployment, poor life condition, having history of previous domestic violence (Alexander, R., 2002).
+
+\vspace{3mm}
+
+While we all are concern about the domestic violence, it is also factor that the domestic violence have a huge impact on the economy. Every year the government have to spend a huge amount of money, for the sheltering, treatment and rehabilitant the victims. Domestic violence in NSW cost an estimated at $1.5 billion on an annual basis, based on 1990 data (Distaff Associates, 1991). However this data is only from 1990, in fact in the recent days this amount is increasing day by day. 
+
+
+
+
+\vspace{6mm}
+
+# Data and methodology 
+
+In order to explain the domestic violent rate in the NSW we are examining some CSV files from the census data, where the fact and data is exists. The dataset been used is the domestic violence rates in New South Wales which is measured at the level of local government area and cover from January 1999 till December 2015. 
+
+\vspace{3mm}
+
+There was three CSV files been examined. The first file we are examine is the number of domestic violence recorded in the LGA wise. Total 141 LGA been recorded and the entry is been examined from Jan 1999 to December 2015. As an example in the area of Albury total 1004 incident has been recorded in that time frame, while in the black town total 1948 incident been recorded only in the year of 20015, which is a very significant number.The second file was the labeling file which is containing various level of people in the society, suppose B10 is 15 to 19 age group male and in this table there are some data pack and profile also exists.
+
+\vspace{3mm}
+
+The other file is containing the all of the population where different age group people is recorded in the basis of area location and the size of the area. For this project another data file been examined which been obtained from the BISCAR website, the web link is : http://www.bocsar.nsw.gov.au/Pages/bocsar_pages/Domestic-Violence.aspx. In this database we have examine the data recorded in the year of 2017 and which was shown the tabular format which was the area wise recorded number of incident and the ranking of the area. From this table we have seen that the walgett is recorded as a number 1 in the ranking list with 146 incident, and 2292 incedents per 10000 population.
+
+\vspace{3mm}
+
+On the other hand lane cove is ranking as the 119 where total number of incident was 33 in the year of 2017 and the number of recorded incident was 87 per 10000 population. On the other hand, highest number of incident was recorded in black town area for the year of 2017, where we observe that total 2022 case was recorded and the number of incident was 581 per 10000. Which is a significantly high number comparing to the other area of NSW. We also can observe that the less the number of incident per 10000 people the better the number of ranking.
+
+\vspace{3mm}
+
+Once after observing these data files our aim is to find the reason and the causality of domestic violence in NSW. The data file been shifted to R markdown and planed to build the statistical mode to find the causality. It will be observe whether the increased number of domestic violence is just because of the increased number of population or it is the reason of poverty, unemployment or the education.   
+
+\vspace{3mm}
+
+**Hypothesis based on the Data and the study:** Domestic violence is happening not because of the increased number of population but poor area is facing it rather than the rich area and also have an influence on increased number of male population.
+
+\vspace{3mm}
+
+**Statistical analysis plan to reject/accept the Hypothesis:** We will try to build a model based on some dependent and independent variables. From the data we will try to make one file which will be combination from the sheet of excel.
+
+**The dependent variable:** Rate of domestic violence 
+
+
+
+**The independent variable :** area, total population, male population, size of the area, population between 20 to 35. 
+
+
+\vspace{6mm}
+
+
+
+# Expectations and limitations
+
+In order to get a total picture of domestic violence happening in NSW local areas based on the data been supplied, we have to do certain type of operation within the data files and have to combine some field for the exploratory data analysis. Since the data given in the NSW_LGA file is only considering the data of 2011 so in the CSV file of DV_NSW ONLY 2011 data is added in a separate Colum, aiming to analyses this data with the NSW_LGA file. Since the data in the domestic violence file is consist as a monthly data, this has been converted to yearly data for the better iteration.
+
+\vspace{3mm}
+
+
+After summarizing the data, we have seen the graph, it has been seen that the trend of domestic violence in NSW is going up which is very significant to mention, and is so alarming. however, since from 1999 the population in NSW is increasing, we have to see and examine the correlation with the increasing population density in NSW as well. 
+
+\vspace{3mm}
+
+
+From the other data file given in excel format was shifted to R and we analyze that data  file, we found the top ten rating Area of domestic violence is actually a bit less rich area. So we can easily say that poor people facing more number of domestic violence than the richer living people. 
+
+\vspace{3mm}
+
+
+After the final data file been prepared the correlation been observed between the variables and we have seen that, there are good correlation in-between the variables with itself.  The corr plot been observed and the histogram been seen within the variables as well. 
+
+\vspace{3mm}
+
+
+**Model:**
+Finally we made the linear model, which is :
+
+              model <- lm(all_month_2011 ~area_sqkm+populationTotal+maleTotal+femaleTotal+
+
+              Twenty_twentyfour_Total+twentyfive_thirtyfive_Total ,data)
+              
+              
+
+\vspace{3mm}
+
+
+**Result:**
+R-Squire shows the model in a good fitting with the variable we are predicting.  From the probability of co efficient we can see, in terms of population and the male population the model is denoted very significance. which mean that the number of domestic violence in NSW is  really depends on the population or on the male, population.  The slandered error of the model is significantly low, which denotes that the model predicting a good result, which is very remarkable. the domestic violence is than may be related to the other factor like the income of the house hold or may be the educational levels of the individuals. where as we don't have that data available to analyses.
+
+\vspace{3mm}
+
+While the model been visualized and the histogram been seen as well,  from Residual shows that the model we made was pretty good as the distribution is almost Gaussian or the normal distribution. 
+
+
+
+
+\vspace{6mm}
+
+#Conclusion
+
+since the domestic violence in NSW local area is an important issue, our aim is to find what is the current rate of domestic violence in NSW areas.  We have seen the alarming result that the trend is going up day by day since from 1999. We been analyze the data to see the reason, why the domestic violence is going up and wat area is facing more incidents than the other area.  The statistical model been made to observe the result, it was observed that the domestic violence is an issue of male population andthe density of the population.  We wont be able to analyze some other factor like unemployment, economy etc. we can suspect that in explaining the domestic violence in NSW some other factor like education, unemployment, drug uses etc also have a good influences. Since we don't have the available data about this variable we can't get the perfect prediction.  We can also mention that the are some other causality like, education, ethnic background etc. 
+
+\vspace{3mm}
+
+
+since the data we get and observe was not really enough to conclude the result, further data need to analyze which may include the individual case study including the income data and the expense data so basically we need more data with variation of feature including to get the answer of all the question we are looking for.  
+
+
+
+\vspace{6mm}
+
+#Bibliography 
+
+1.	Devery, C., 1992. Domestic Violence in NSW: A Regional Analysis. New South Wales Bureau of Crime Statistics and Research.
+2.	Watson, G., 1996. Theoretical constructions of domestic violence and their implications for social work and social policy(Doctoral dissertation, University of South Australia).
+3.	Kirkby, D., 1994. Violence in the family. Family Violence, pp.60-93.
+4.	Eardley, T.O.N.Y., 1998. Low pay and family poverty. Family Matters, 51, pp.29-32.
+5.	Bates, L., Redman, S., Brown, W. and Hancock, L., 1995. Domestic violence experienced by women attending an accident and emergency department. Australian and New Zealand Journal of Public Health, 19(3), pp.293-299.
+6.	Young, M., Dobson, A.J. and Byles, J.E., 2000. The effectiveness of legal protection in the prevention of domestic violence in the lives of young Australian women. Trends and Issues in Crime and Criminal Justice/Australian Institute of Criminology, (148), p.1.
+7.	Seddon, N., 1993. Domestic violence in Australia: The legal response. Federation Press.
+8.	Alexander, R., 2002. Domestic violence in Australia: The legal response. Federation Press.
+9.	Laing, L. and Bobic, N., 2002. Economic costs of domestic violence. Partnerships Against Domestic Violence and the University of New South Wales. Australia.
+
+
+
+
