@@ -3,10 +3,11 @@
 In this project the initiative has been taken to implement a machine learning algorithm, to classify the apps based on the description of the apps and some other data files. It has been examined four given CSV files where we tried to figure out the data pattern and tried to find out the best solution for classify the apps. From the training data.csv file where the apps description and some Colum of TF-IDF (Term Frequency- Invert Document Frequency), been tried to build the best classifier.
 
 ### Data:
-training_data.csv: There are 20,104 rows; each row corresponds to an app. 
-training_desc.csv: There are 20,104 rows; each row is for an app 
-training_labels.csv: There are 20,104 rows; each row is for an app. 
-test_data.csv: This is a subset of the original data set 
+            •	training_data.csv: There are 20,104 rows; each row corresponds to an app. 
+            •	training_desc.csv: There are 20,104 rows; each row is for an app 
+            •	training_labels.csv: There are 20,104 rows; each row is for an app. 
+            •	test_data.csv: This is a subset of the original data set 
+
 
 ### Tools:
       •	Jupyter notebook, which came with the anaconda distribution
