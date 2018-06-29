@@ -2,8 +2,6 @@
 A complete machine learning project Finding some facts like the hypothesis testing and build and implement the machine learning model from solar electricity data of Ausgrid Company .
 
 # Problem
-Everything in our civilization is mainly depends on the electricity. We have to use the electricity in order to active ourselves and our society. There are various company providing the electricity for our comfort. Now a days people want to use the solar panel as well . this is becoming a great challenge for the company to their customer whether using the solar panel is good for them or not. It is also a question which solar panel should be use by the customer.
-
 Depending on the usages of the electricity amount, it is possible to give the right answer to the people, what sized panel they can use or buy. Since when the solar panel came to the market, the debate is going on whether should we use the solar panel or not? In a certain period of time the installation cost will be overcome by the billing amount or not?
 
 Some people also argue that how many years it is possible to use the solar panel after the installation of the panel first time in the house. Some people also want to see the installation cost according to the size of the panel and some want to see the curve of solar and non solar billing situation.
@@ -15,7 +13,8 @@ In this process our findings is to analysis the data got from the Ausgrid compan
 
 # Files
 # Data
-The solar home electricity data is available in the link: http://www.ausgrid.com.au/Common/About-us/Corporate-information/Data-to-share/Solar-home-electricity-data.aspx#.Wa35zLIjHIV. 
+The solar home electricity data is available in the link: 
+http://www.ausgrid.com.au/Common/About-us/Corporate-information/Data-to-share/Solar-home-electricity-data.aspx#.Wa35zLIjHIV. 
 
 The company published their data and keep it available for the government, researchers or the individuals whoever want to use the data for research purposes. From the various data set the monthly data is been downloaded which is in the zip format of the size 13 MB. Once after decompress the file it become 66 Mb in three csv files. All three files are non solar monthly data file of 4064 customers, solar monthly data of 2657 customers and the notes file of the solar and non solar customers. From that notefile further two csv file I make and named as solar site and non solar site of attributes in my data folder. This two file data is already given in the notes file.
 
