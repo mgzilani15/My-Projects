@@ -23,6 +23,7 @@ Our aim was to find out the Machine learning model where we can suggest the cust
 
 
 
+
 ### Domestic violence in NSW :
 This project was developed in R.  The main of this project is to analyse the social data from a data scientist point of view, and highlight the findings about some facts. 
 
@@ -38,6 +39,7 @@ Using these Data file we developed a RMD file which been trying to finding the s
 #### Tools: 
 	R
 	R Studio
+
 
 
 ### Mobile App Classifier :
