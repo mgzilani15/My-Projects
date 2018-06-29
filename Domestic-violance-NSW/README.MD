@@ -17,7 +17,11 @@ Using these Data file we developed a RMD file which been trying to finding the s
 	R Studio
 
 ### Description about the Files
-    
+    •	Project.rmd- The main project of this topic
+    •	Project.html, project.pdf, project.docx – These are the files after been kent the project file
+    •	Report about this topic is Final paper templete files.
+    •	Rest others are data file in csv
+
 
 ### How to run the project file:
     • Download all the Data files
