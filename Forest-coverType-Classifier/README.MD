@@ -5,6 +5,15 @@ The forest cover type data was collected from US Forest Service (USFS) where the
 ### Data: 
 The data is originally located in UCI Machine learning repository, which is https://archive.ics.uci.edu/ml/datasets/Covertype. 
 
+### How to run this notebook
+      •	Upload the "Forest-coverType-Classifier.ipynb" iPython 3 Notebook to Jupyter Notebook server that supports python 3.6.
+      •	Download covtype.data.gz from 'https://archive.ics.uci.edu/ml/machine-learning-databases/covtype/covtype.data.gz' and unzip             the archive file. This will produce 'covtype.data' file.
+      •	Upload the data file to Jupyter Server in the same folder where the iPython file was uploaded.
+      •	The notebook should run fine.
+      •	PS. the notebook was developed and tested in windows laptop with 16GB RAM.
+      •	To installation of Jupyter Notebook, please go to https://docs.python.org/3/using/index.html
+
+
 ### Tools:
       •	Jupyter notebook, which came with the anaconda distribution
       •	Python 3.0+ and the following Python libraries:
