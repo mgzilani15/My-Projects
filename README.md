@@ -61,13 +61,11 @@ In this project the initiative has been taken to implement a machine learning al
                     •	http://www.numpy.org/ 
                     •	https://seaborn.pydata.org/ 
 
-
-
-### Algorithm and Result:
+#### Algorithm and Result:
 W used the KNN algorithm for classifying app in the app market and The accuracy of the algorithm using random validation set was 55.24 %.
 
 
-### Forest Cover Type Classifier :
+## Forest Cover Type Classifier :
 The forest cover type data was collected from US Forest Service (USFS) where they used Geographic Information System (GIS) to determine various cartographic attributes e.g. soil type, slope and elevation. In this project there are various types supervised classification model been used to solve the problem and compare their accuracy using precision and recall. After doing some initial experiment, Decision tree, Random Forest, K-nearest neighbours (KNN) and Naïve Bayes classification algorithm been used. After analysing the results of these methods, the best model been recommended as our final model. 
 
 #### Data: 
