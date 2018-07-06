@@ -3,7 +3,7 @@ In this repository all my data science projects which is developed in Python or 
 
 Bellow you can find the summary of all the projects:
 
-## Project of Ausgrid Energy Company: __________________________________________________________________________________________________
+## Project of Ausgrid Energy Company:___________________________________________________________________________
 In this project, A machine learning model been developed using the logistic regression. The data been taken from the company (Ausgrid energy) website, which is: http://www.ausgrid.com.au/Common/About-us/Corporate-information/Data-to-share/Solar-home-electricity-data.aspx#.Wa35zLIjHIV. The data is mainly the billing information of their customer who been using the solar panel or not, however the data was free to use for any research purposes. We been using Three tables:
 
           •	Solar customer information-Billing data in various time period of the day (Solar using customers)
