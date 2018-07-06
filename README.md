@@ -25,7 +25,7 @@ Our aim was to find out the Machine learning model where we can suggest the cust
 
 
 
-## Domestic violence in NSW:_______________________________________________________________________________________
+## Domestic violence in NSW:____________________________________________________________________________________
 This project was developed in R.  The main purposes of this project is to analyse the social data from a data scientist point of view, and highlight the findings about some facts. 
 
 The data was used in this project was collected from the NSW census data about the domestic violence. Using these data our aim was finding the facts and trends of Domestic violence happening in NSW.  There are four data files been used to understand this situation, which are noted bellow:
