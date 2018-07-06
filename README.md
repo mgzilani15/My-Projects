@@ -110,7 +110,7 @@ https://www.kaggle.com/c/titanic/data
           •	To installation of Jupyter Notebook, please go to https://docs.python.org/3/using/index.html
           
           
-## USA housing price Data set from Kaggle:
+## USA housing price Data set from Kaggle:_______________________________________________________________________________
 This is a learning stage, knowledge base machine learning model, been used the linear regression model. The data been taken from the Kaggle and been used to predicting the housing price, as a supervised learning  system. 
 
 #### Data: 
