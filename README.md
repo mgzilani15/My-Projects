@@ -66,7 +66,8 @@ In this project the initiative has been taken to implement a machine learning al
 W used the KNN algorithm for classifying app in the app market and The accuracy of the algorithm using random validation set was 55.24 %.
 
 
-## Forest Cover Type Classifier :
+
+## Forest Cover Type Classifier:_____________________________________________________________________________
 The forest cover type data was collected from US Forest Service (USFS) where they used Geographic Information System (GIS) to determine various cartographic attributes e.g. soil type, slope and elevation. In this project there are various types supervised classification model been used to solve the problem and compare their accuracy using precision and recall. After doing some initial experiment, Decision tree, Random Forest, K-nearest neighbours (KNN) and Naïve Bayes classification algorithm been used. After analysing the results of these methods, the best model been recommended as our final model. 
 
 #### Data: 
@@ -92,7 +93,8 @@ The overall performance measure for supervised classifier ie, precision, recall 
 From the above table it has been observe that KNN model demonstrated the best performance which at 97% overall accuracy, however the Random Forest (95%) and the Decision Tree were also very close. 
 
 
-## Titanic Data set from Kaggle:
+
+## Titanic Data set from Kaggle:_______________________________________________________________________________
 This is my first knowledge based machine learning project.  I made the machine learning model and used various algorithm to see the performance of the algorithm and see which algorithm is the best suitable for our project. 
 
 #### Data: 
