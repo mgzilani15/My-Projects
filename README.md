@@ -92,6 +92,16 @@ The overall performance measure for supervised classifier ie, precision, recall 
 #### Overall Performance: 	
 From the above table it has been observe that KNN model demonstrated the best performance which at 97% overall accuracy, however the Random Forest (95%) and the Decision Tree were also very close. 
 
+ #### Tools: 
+          •	Jupyter notebook, which came with the anaconda distribution
+          •	Python 3.0+ and the following Python libraries:
+                                      	1. http://scikit-learn.org/stable/ 
+                                      	2. https://pandas.pydata.org/ 
+                                      	3. https://matplotlib.org/ 
+                                      	4. http://www.numpy.org/ 
+                                      	5. https://seaborn.pydata.org/ 
+
+
 
 
 ## Titanic Data set from Kaggle:_______________________________________________________________________________
@@ -100,6 +110,16 @@ This is my first knowledge based machine learning project.  I made the machine l
 #### Data: 
 The data is originally located in Kaggle web site.
 https://www.kaggle.com/c/titanic/data
+
+ #### Tools: 
+          •	Jupyter notebook, which came with the anaconda distribution
+          •	Python 3.0+ and the following Python libraries:
+                                      	1. http://scikit-learn.org/stable/ 
+                                      	2. https://pandas.pydata.org/ 
+                                      	3. https://matplotlib.org/ 
+                                      	4. http://www.numpy.org/ 
+                                      	5. https://seaborn.pydata.org/ 
+
 
 #### How to run this notebook:
           •	Upload the "titanic-ver1.ipynb" iPython 3 Notebook to Jupyter Notebook server that supports python 3.6.
@@ -116,6 +136,16 @@ This is a learning stage, knowledge base machine learning model, been used the l
 #### Data: 
 The data is originally located in Kaggle web site.
  https://www.kaggle.com/vedavyasv/usa-housing
+ 
+ #### Tools: 
+          •	Jupyter notebook, which came with the anaconda distribution
+          •	Python 3.0+ and the following Python libraries:
+                                      	1. http://scikit-learn.org/stable/ 
+                                      	2. https://pandas.pydata.org/ 
+                                      	3. https://matplotlib.org/ 
+                                      	4. http://www.numpy.org/ 
+                                      	5. https://seaborn.pydata.org/ 
+
   
 
 
