@@ -1,0 +1,506 @@
+---
+title: "Tree based Algorithm"
+author: "zilani"
+date: "16 October 2018"
+
+output: 
+    html_document:
+      theme: flatly 
+      highlight: tango
+      toc: true
+      toc_float: true
+---
+
+<style>
+h3 {
+  color: white;
+  background-color: #44546a;
+  text-indent: auto; 
+</style>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+
+## Library
+
+```{r}
+library(randomForest)
+library(tree)
+library(MASS)
+library(caTools)
+library(ISLR)
+library(rpart)
+library(pROC)
+attach(Carseats)
+
+```
+
+
+# Decision tree (regression-boston)
+
+####**train test split ratio 70/30** 
+
+
+```{r}
+# installing boston data
+data<-Boston
+str(data)
+```
+
+
+```{r}
+
+#Split your data into training and testing sets 70/30. Use the caTools library to do this.
+#library(caTools)
+
+set.seed(101) 
+
+sample = sample.split(data$medv, SplitRatio = .70)
+train = subset(data, sample == TRUE)
+test = subset(data, sample == FALSE)
+dim(test)
+dim(train)
+```
+
+
+```{r}
+# build the decision tree model using the train data
+#library(rpart)
+dt.boston<- tree(medv ~.,data = train)
+
+# summary of the tree using train data
+summary(dt.boston)
+
+# ploting the tree
+plot(dt.boston)
+text(dt.boston, pretty=0)
+
+```
+
+
+```{r}
+
+# cross validation of the tree (boston data)
+cv_dt.boston=cv.tree(dt.boston)
+
+plot(cv_dt.boston$size,cv_dt.boston$dev, type="b")
+
+
+```
+
+
+```{r}
+# use the test data to prediction
+
+dt.preds <- predict(dt.boston,test)
+#dt.preds
+summary(dt.preds)
+
+# plot the predection vs the sales
+plot(dt.preds, test$medv)
+abline(0,1)
+```
+
+# Random forest (Regression-Boston)
+
+####**train test split ratio 70/30**
+
+
+```{r}
+
+rf.boston <- randomForest(medv ~ . , data = train, ntree=500, mtry=4, importance = TRUE)
+
+#What was your model's confusion matrix on its own training set? Use model$confusion.
+rf.boston$confusion
+
+# print the model in train data
+rf.boston
+
+# after we see the model there are 4 variables been used and 500 tree been built
+#Now use your random forest model to predict on your test set!
+
+p <- predict(rf.boston,test)
+
+# plotting sales verses the others
+plot(p,test$medv)
+abline(0,1)
+#p
+
+# calculate the RMSE is the test error from the data set
+mean((p-test$medv)^2)
+
+#AS we mentioned the importance = true in our model
+# below is the importancy of all the variables
+
+rf.boston$importance
+
+# Assending order of the variables importancy
+varImpPlot(rf.boston)
+
+```
+
+
+# Bagging
+
+#####**Bagging(regression)** 
+#####**(no test train split)**
+#####**Boston data**
+
+```{r}
+# here we use same kind of formula but used all (13) variables as predector
+# this is bagging because using all the variables, except the predector
+# but in here error is 9.75
+# which is better than decision tree
+# default number of tree is 500 
+
+btree<-randomForest(medv~., data=data, mtray=13)
+btree
+
+# ploting the bagging tree
+plot(btree)
+```
+
+
+#Decision tree (regression-carseat)
+####**train test split ratio 70/30**
+####**carseat data from (ISLR)**
+
+
+```{r}
+# install library ISLR
+# using the carseats data file
+
+head(Carseats)
+
+
+```
+
+```{r}
+# see the dimansion of the Carseats data file
+# there are 400 observation with 11 variables, sales is the target variable and the rest are the 
+# exploratory variables
+# it seems this is a regration problem while the sale data is a continious variable
+# we gonn apredict the sale
+
+dim(Carseats)
+str(Carseats)
+```
+
+
+```{r}
+#Split your data into training and testing sets 70/30. Use the caTools library to do this.
+
+
+library(caTools)
+
+set.seed(101) 
+
+sample = sample.split(Carseats$Sales, SplitRatio = .70)
+train = subset(Carseats, sample == TRUE)
+test = subset(Carseats, sample == FALSE)
+dim(train)
+dim(test)
+```
+
+
+```{r}
+# inorder to see the performance of bagging model lets build a model in decision tree
+# after than we will compare the performance of bagging model with the decission tree. 
+# our decision tree model is :
+library(rpart)
+library(tree)
+
+# based on the regression problem using the carsales data making the model
+dt.carseat <- tree(Sales ~.,data = train)
+summary(dt.carseat)
+
+```
+
+
+```{r}
+# use the test data to prediction
+
+tree.preds <- predict(dt.carseat,test)
+
+# plot the predection vs the sales
+plot(tree.preds, test$Sales)
+
+# calculate the RMSE is the test error from the data set
+mean((tree.preds-test$Sales)^2)
+
+# PLOTING A LINE
+abline(0,1)
+
+```
+
+
+#Random forest(Regression-carseat)
+
+####**train test split ratio 70/30**
+####**carseat data from (ISLR)**
+
+
+```{r}
+# now lets see if the bagging is improving the test error
+# number of tree is 500 here, though bydefault system took 3 variables to make the model
+#we can define it by using mtry=6 (mean use 6 variables) which we can see belowing the RMSE
+
+rf.carseat <- randomForest(Sales ~ . , data = train, ntree=500, mtry=4, importance = TRUE)
+
+#What was your model's confusion matrix on its own training set? Use model$confusion.
+rf.carseat$confusion
+
+# print the model in train data
+rf.carseat
+
+# after we see the model there are 3 variables been used and 500 tree been built
+
+p <- predict(rf.carseat,test)
+
+# plotting sales verses the others
+plot(p,test$Sales)
+abline(0,1)
+#p
+
+# calculate the RMSE is the test error from the data set
+mean((p-test$Sales)^2)
+
+#AS we mentioned the importance = true in our model
+# below is the importancy of all the variables
+
+rf.carseat$importance
+
+# Assending order of the variables importancy
+varImpPlot(rf.carseat)
+
+```
+
+
+
+
+
+
+
+
+###**comparison between decision tree and Random forest**
+####**train test split ratio 70/30**
+####**carseat data from (ISLR)**
+
+```{r}
+#Now use your random forest model to predict on your test set!
+
+p <- predict(rf.carseat,test)
+
+# plotting sales verses the others
+plot(p,test$Sales)
+abline(0,1)
+#p
+
+# calculate the RMSE is the test error from the data set
+mean((p-test$Sales)^2)
+
+
+# discussion: this is much better fit than the decision tree we saw before, and the RMSE(ROOT MEAN SQUIRE ERROR)
+# is very less in here than before, which mean this is better model selection for this data set
+```
+
+```{r}
+#AS we mentioned the importance = true in our model
+# below is the importancy of all the variables
+
+rf.carseat$importance
+
+# Assending order of the variables importancy
+varImpPlot(rf.carseat)
+
+```
+
+
+
+#Decision tree (Classifier-college)
+####**train test split ratio 70/30**
+####**data(college)**
+
+
+```{r}
+
+# getting data file
+# college data set is in ISLR library
+
+df<-College
+head(df)
+
+
+```
+
+```{r}
+#Split your data into training and testing sets 70/30. Use the caTools library to do this.
+
+set.seed(101) 
+
+sample = sample.split(df$Private, SplitRatio = .70)
+train = subset(df, sample == TRUE)
+test = subset(df, sample == FALSE)
+```
+
+**Decision Tree**
+
+```{r}
+#Use the rpart library to build a decision tree to predict whether or not a school is Private. Remember to only build your tree off the training data.
+# build the tree on training data based on the private as a classifier
+
+library(tree)
+dt.college <- tree(Private ~.,data = train)
+summary(dt.college)
+```
+
+
+```{r}
+# use the test data to prediction
+
+tree.preds <- predict(dt.college,test)
+```
+
+```{r}
+#Check the Head of the predicted values. You should notice that you actually have two columns with the probabilities.
+
+head(tree.preds)
+```
+```{r}
+#Use the rpart.plot library and the prp() function to plot out your tree model.
+
+library(tree)
+plot(dt.college)
+text(dt.college, pretty=0)
+```
+
+#random Forest (Classifier-college)
+
+####**train test split ratio 70/30**
+####**data (college)**
+
+```{r}
+#Now use randomForest() to build out a model to predict Private class. Add importance=TRUE as a parameter in the model. (Use help(randomForest) to find out what this does.
+
+rf.college <- randomForest(Private ~ . , data = train,importance = TRUE)
+
+# print the model
+rf.college
+```
+
+
+```{r}
+#AS we mentioned the importance = true in our model
+# below is the importancy of all the variables
+
+rf.college$importance
+
+# Assending order of the variables importancy
+varImpPlot(rf.college)
+
+library(pROC)
+
+#Now use your random forest model to predict on your test set!
+p <- predict(rf.college,test)
+
+# making the confussion matrix
+t=table(predictions=p,actual=test$Private)
+t
+
+# accurity rate
+sum(diag(t))/sum(t)
+
+# PREDECTION WITH PROBABILITY
+predectionwithprob<-predict(rf.college,test,type='prob')
+plot(roc(test$Private,predectionwithprob[,2]))
+
+```
+
+#Decision Tree(Classifier-birthData)
+
+####**train test split ratio 70/30**
+####**birthwt data of MASS**
+
+
+```{r}
+df<-birthwt
+str(df)
+
+df[,c('low','race', 'smoke','ptl','ht', 'ui','ftv')] <- lapply(df[,c('low','race', 'smoke','ptl','ht', 'ui','ftv')],as.factor)
+str(df)
+
+#Split your data into training and testing sets 70/30. Use the caTools library to do this.
+
+set.seed(101) 
+
+sample = sample.split(df$low, SplitRatio = .70)
+train = subset(df, sample == TRUE)
+test = subset(df, sample == FALSE)
+
+```
+
+```{r}
+str(train)
+dt.birthwt <-tree(low ~.,data = train)
+summary(dt.birthwt)
+```
+
+
+
+#random forest(Classifier-birthData)
+
+####**train test split ratio 70/30**
+####**birthwt data of MASS**
+
+
+
+
+```{r}
+#Now use randomForest() to build out a model to predict Private class. Add importance=TRUE as a parameter in the model. (Use help(randomForest) to find out what this does.
+
+rf.birthwt <- randomForest(low ~ . , data = train,mtray=3, ntree=20)
+
+# print the model
+rf.birthwt
+```
+
+```{r}
+#AS we mentioned the importance = true in our model
+# below is the importancy of all the variables
+
+rf.birthwt$importance
+
+# Assending order of the variables importancy
+varImpPlot(rf.birthwt)
+
+```
+
+```{r}
+library(pROC)
+
+#Now use your random forest model to predict on your test set!
+p <- predict(rf.birthwt,test)
+
+# making the confussion matrix
+t=table(predictions=p,actual=test$low)
+t
+
+# accurity rate
+sum(diag(t))/sum(t)
+
+# PREDECTION WITH PROBABILITY
+predectionwithprob<-predict(rf.birthwt,test,type='prob')
+plot(roc(test$low,predectionwithprob[,2]))
+```
+
+
+
+
+
