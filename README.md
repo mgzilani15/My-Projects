@@ -1,5 +1,5 @@
 # My-Projects
-In this repository all my data science projects which is developed in Python or R will be found. Anybody can use the technique for study and research purposes only. In the list above there are some folders, which contains each project including the data, code and instruction.
+In this repository all my data science projects which is developed in Python will be found. Anybody can use the technique for study and research purposes only. In the list above there are some folders, which contains each project including the data, code and instruction.
 
 Bellow you can find the summary of all the projects:
 
